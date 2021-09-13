@@ -37,11 +37,8 @@ const showProducts = (products) => {
       `;
     document.getElementById("all-products").appendChild(div);
   }
-
 };
 
-const ratingStar = document.getElementById('ratings');
-console.log(ratingStar)
 
 
 
