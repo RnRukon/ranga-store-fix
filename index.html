@@ -8,33 +8,58 @@
   <title>FakeStore</title>
   <link rel="stylesheet" href="./css/style.css" />
   <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 
   <!-- google Montserrat  font  -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet" />
+  <!-- font awesome icon -->
+  <script src="https://kit.fontawesome.com/9ee75d3ee7.js" crossorigin="anonymous"></script>
 </head>
 
-<body>
-  <header></header>
+<body class="container">
+  <header>
+
+  </header>
+
+  <!-----------------------------------------
+            input and search button 
+  ------------------------------------------->
   <main class="main">
     <div class="search-field">
-      <div class="search-box">
-        <input id="input-field" class="search-field" type="text" />
-        <button type="button" class="btn btn-primary search-button" data-toggle="button" aria-pressed="false"
-          autocomplete="off" id="search-btn" onclick="loadProducts()">
-          Search
-        </button>
+      <div class=" mb-3 d-flex justify-content-center">
+        <div>
+          <div class="input-group my-5">
+            <input id="input-field" class="search-field border input form-control   border-info rounded " type="text"
+              placeholder="Product">
+            <button id="search-btn" class="btn bg-info text-white search-button" type="button"
+              onclick="loadProducts()">Search</button>
+          </div>
+        </div>
       </div>
     </div>
     <div class="row">
+      <!-----------------------------------------
+                 product details container 
+        ------------------------------------------->
       <div class="col-md-9 col-lg-9 col-sm-7">
-        <div id="all-products" class="">
-          <h1></h1>
+        <div id='detailsDiv'>
+          <h1 class=" text-center text-info">Online Store</h1>
         </div>
+
+
+        <div id="all-products" class="">
+
+        </div>
+
       </div>
+
+      <!--------------------------------------------- 
+                      My-Cart 
+        ------------------------------------------>
+
       <div class="col-md-3 col-lg-3 col-sm-5 cart-main">
         <div class="cart" id="my-cart">
           <table class="table">
@@ -50,7 +75,7 @@
             <tbody>
               <tr>
                 <th>Total Added-Products:</th>
-                <td>$ <span id="total-Products">0</span></td>
+                <td><span id="total-Products">0</span></td>
                 <td></td>
                 <td></td>
               </tr>
