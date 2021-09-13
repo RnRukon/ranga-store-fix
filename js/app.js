@@ -10,9 +10,10 @@ show all product in UI
 const showProducts = (products) => {
   const allProducts = products.map((pd) => pd);
   for (const product of allProducts) {
-
     const image = product?.image;
     const id = product.id;
+    const rate = product?.rating?.rate;
+    const count = product?.rating?.count;
     const div = document.createElement("div");
     div.classList.add("product");
 
@@ -27,17 +28,23 @@ const showProducts = (products) => {
       <i class="fas fa-star text-warning"></i>
       <i class="fas fa-star text-warning"></i>
       <i class="fas fa-star-half-alt text-warning"></i>
-      <span>${product?.rating?.rate}</span> 
+      <span>${rate}</span> 
       <i class="fas fa-shopping-cart ms-3  text-info"></i>
-      <span>${product?.rating?.count}</span>
+      <span>${count}</span>
       </p>
       <button onclick="addToCart(${product?.id},${product?.price})" id="addToCart-btn" class="buy-now btn  btn-info">add to cart</button>
       <button id="details-btn" onclick="getDetails(${id})" class="btn  btn-warning">Details</button></div>
-
       `;
     document.getElementById("all-products").appendChild(div);
   }
+
 };
+
+const ratingStar = document.getElementById('ratings');
+console.log(ratingStar)
+
+
+
 let count = 0;
 const addToCart = (id, price) => {
   count = count + 1;
@@ -127,18 +134,18 @@ const detail = (ditail) => {
     <img class="product-image" src="${ditail?.image}" alt="">
   </div>
   <div class=' ms-3'>
-    <h1>${ditail?.title}</h1>
-    <h5>Category: ${ditail?.category}</h5>
-    <p>Description: ${ditail.description}</p>
-    <h3 class=" text-danger">Price: $${ditail?.price}</h3>
-    <p> 
-      <i class="fas fa-star text-warning"></i>
-      <i class="fas fa-star text-warning"></i>
-      <i class="fas fa-star-half-alt text-warning"></i>
-      <span>${ditail?.rating?.rate}</span> 
-      <i class="fas fa-shopping-cart ms-3  text-info"></i>
+     <h1>${ditail?.title}</h1>
+     <h5>Category: ${ditail?.category}</h5>
+     <p>Description: ${ditail.description}</p>
+     <h3 class=" text-danger">Price: $${ditail?.price}</h3>
+     <p>
+       <i class="fas fa-star text-warning"></i>
+       <i class="fas fa-star text-warning"></i>
+       <i class="fas fa-star-half-alt text-warning"></i>
+       <span>${ditail?.rating?.rate}</span> 
+       <i class="fas fa-shopping-cart ms-3  text-info"></i>
       <span>${ditail?.rating?.count}</span>
-      </p>
+      </p>     
   </div>
 </div>
   
