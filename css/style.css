@@ -7,6 +7,7 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 20px;
+  background-color: azure;
   border: 1px solid rgb(0, 208, 255);
   text-align: center;
   width: 100%;
@@ -21,10 +22,11 @@ body {
   transition: 0.6s;
   background-color: rgb(255, 251, 242);
   border: 1px solid rgb(7, 181, 255);
+  box-shadow: 4px 4px 7px rgb(126, 126, 126);
 }
 
 .single-product:hover {
-  box-shadow: 4px 4px 7px gray;
+  box-shadow: 4px 4px 7px rgba(58, 196, 255, 0.871);
   border-radius: 10px;
   /* border: 1px solid cyan; */
 }
@@ -36,12 +38,19 @@ body {
 
 .cart {
   width: 350px;
-  /* border: 1px solid green; */
+  background-color: rgb(255, 240, 240);
+  border: 1px solid rgb(255, 0, 0);
   padding: 10px;
-  box-shadow: 10px 10px 20px gray;
+  box-shadow: 10px 10px 20px rgb(255, 195, 195);
   border-radius: 5px;
   margin-right: 30px;
   position: fixed;
+  transition: 0.6s;
+}
+
+.cart:hover {
+  box-shadow: 10px 10px 20px rgb(0, 221, 255);
+  transition: 0.6s;
 }
 
 .cart-main {

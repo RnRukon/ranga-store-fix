@@ -12,22 +12,49 @@ const showProducts = (products) => {
   for (const product of allProducts) {
     const image = product?.image;
     const id = product.id;
-    const rate = product?.rating?.rate;
     const count = product?.rating?.count;
+    const rate = product?.rating?.rate;
+    /* ********************************************
+         rate star dynamic
+     ******************************************** */
+    const star = () => {
+      if (rate < 3) {
+        return `
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star-half-alt text-warning"></i>
+     `
+      }
+      else if (rate < 4) {
+        return `
+               <i class="fas fa-star text-warning"></i>
+               <i class="fas fa-star text-warning"></i>
+               <i class="fas fa-star text-warning"></i>
+               <i class="fas fa-star-half-alt text-warning"></i>`
+      }
+      else if (rate < 5) {
+        return `
+              <i class="fas fa-star text-warning"></i>
+              <i class="fas fa-star text-warning"></i>
+              <i class="fas fa-star text-warning"></i>
+              <i class="fas fa-star text-warning"></i>
+              <i class="fas fa-star-half-alt text-warning"></i>`
+      }
+    }
+
     const div = document.createElement("div");
     div.classList.add("product");
 
-    div.innerHTML = `<div class="single-product">
-      <div>
-    <img class="product-image" src=${image}></img>
+    div.innerHTML = `
+    <div class="single-product">
+    <div>
+      <img class="product-image" src=${image}></img>
       </div>
-      <h5>${product?.title}</h5>
+      <h5>${product?.title.slice(0, 23)}...</h5>
       <p>Category: ${product?.category}</p>
       <h3 class=" text-danger">Price: $ ${product?.price}</h3>
       <p> 
-      <i class="fas fa-star text-warning"></i>
-      <i class="fas fa-star text-warning"></i>
-      <i class="fas fa-star-half-alt text-warning"></i>
+      ${star()}
       <span>${rate}</span> 
       <i class="fas fa-shopping-cart ms-3  text-info"></i>
       <span>${count}</span>
@@ -42,6 +69,9 @@ const showProducts = (products) => {
 
 
 
+/* ********************************************
+        Total added - products count
+******************************************** */
 
 let count = 0;
 const addToCart = (id, price) => {
@@ -137,12 +167,13 @@ const detail = (ditail) => {
      <p>Description: ${ditail.description}</p>
      <h3 class=" text-danger">Price: $${ditail?.price}</h3>
      <p>
-       <i class="fas fa-star text-warning"></i>
-       <i class="fas fa-star text-warning"></i>
-       <i class="fas fa-star-half-alt text-warning"></i>
-       <span>${ditail?.rating?.rate}</span> 
+      <i class="fas fa-star text-warning"></i>
+      <i class="fas fa-star text-warning"></i>
+      <i class="fas fa-star text-warning"></i>
+      <i class="fas fa-star-half-alt text-warning"></i>
+       <span>${rate}</span> 
        <i class="fas fa-shopping-cart ms-3  text-info"></i>
-      <span>${ditail?.rating?.count}</span>
+      <span>${count}</span>
       </p>     
   </div>
 </div>
