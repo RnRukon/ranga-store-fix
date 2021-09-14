@@ -3,6 +3,10 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
+/**************************
+ product card style 
+ **************************/
+
 #all-products {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -36,6 +40,10 @@ body {
   height: 150px;
 }
 
+/**********************************
+ Product calculation card  style
+**********************************/
+
 .cart {
   width: 350px;
   background-color: rgb(255, 240, 240);
@@ -57,6 +65,10 @@ body {
   padding-right: 30px;
 }
 
+/************************
+     ipad mood style 
+ *************************/
+
 @media only screen and (max-width: 768px) {
   #all-products {
     display: grid;
@@ -75,6 +87,10 @@ body {
     padding-right: 10px;
   }
 }
+
+/************************
+ mobile mood style 
+ *************************/
 
 @media only screen and (max-width: 468px) {
   #all-products {
